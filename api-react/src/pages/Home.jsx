@@ -55,8 +55,9 @@ axios.get(`https://66e7e69bb17821a9d9da6eb2.mockapi.io/comment`)
     <div>
         <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         <div className='border-4 border-yellow-400 rounded-r-full p-5 sticky top-0 left-0 w-40 bg-amber-50'>
-        <h1 className='text-2xl'>do you want add more Character?</h1>
+        <h1 className='text-2xl'>do you want add more Character or edit ?</h1>
                 <Link to="/addcharacter"><button className='btn bg-yellow-400'>Add</button></Link>
+
                 </div>
                 <div className="flex flex-wrap gap-4 justify-center">
 {filteredCharacters.map((e)=>{
@@ -69,6 +70,8 @@ return(
     />
     <h1>{e.name}</h1>
     <button className='btn' onClick={()=>{deleteCharacter(e.id)}}>Delete</button>
+    <Link to={`/updatecharacter/${e.id}`}><button className='btn bg-yellow-400'>Edit</button></Link>
+
     </div>
     </div>
 

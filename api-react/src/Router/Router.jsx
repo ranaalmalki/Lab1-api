@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom"
 import App from "../App"
 import ErrorPage from "../pages/ErrorPage";
 import AddCharacter from "../pages/AddCharacter";
+import UpdateCharacter from "../pages/UpdateCharacter";
 
 const Router = createBrowserRouter([
 
@@ -13,6 +14,11 @@ const Router = createBrowserRouter([
 {
     path:"/addcharacter",
     element:<AddCharacter/>,
+    errorElement:<ErrorPage/>
+},
+{
+    path:"/updatecharacter/:id",
+    element:<UpdateCharacter/>,
     errorElement:<ErrorPage/>
 },
 

@@ -24,7 +24,7 @@ const AddCharacter =(e)=>{
     e.preventDefault(); 
 
     if (!inputCharacterName || !inputCharacterImg || !inputCharacterGender) {
-        alert("يرجى ملء جميع الحقول.");
+        alert("fill");
         return;
     }
 
@@ -66,14 +66,19 @@ axios.post(`https://66e7e69bb17821a9d9da6eb2.mockapi.io/comment`,{
   onChange={InputCharacterImg}
   value={inputCharacterImg}
 
-  />     <input
+  />  
+                        <select
   type="text"
   placeholder="gender"
   className="input input-bordered  w-full max-w-xs"
   onChange={Inputgharactergender}
   value={inputCharacterGender}
 
-  />
+  >
+    <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
   <div>
 <button type="submit" className='btn bg-amber-400'>Add Charcater</button>
 </div>
